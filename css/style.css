@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+/* html::-webkit-scrollbar{
+    width:12px;
+}
+html::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color:#1340aa;
+} */
+.bg-section{
+    background-color:rgb(231, 230, 230);
+}
+.bg-testimonials{
+    background-color:rgb(238, 238, 238);
+    box-shadow: 0px 3px 7px rgba(27, 27, 27, 0.5);
+    margin-bottom:10px;
+}
+#burger{
+    position:fixed;
+    right:3%;
+    top:4%;
+    z-index:99;
+    cursor: pointer;
+    display:none;
+    transition: all 0.3s;
+}
+#burger i{
+    font-size:24px;
+    color:#d48b03;
+
+}
+aside{
+    position:fixed;
+    width:250px;
+    height:100vh;
+    background-size:cover;
+    background-image: url('../images/mountain1.jpg');
+    top:0;
+    left:0;
+    bottom:0;
+    z-index:90;
+    transition:all 0.4s;
+}
+aside .overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color: rgba(6, 29, 105, 0.8);
+    border-right:1px solid rgb(139, 139, 139);
+}
+aside .profile img{
+    position:relative;
+    width:120px;
+    height:120px;
+    border:4px solid rgb(187, 184, 184);
+    object-fit:cover;
+}
+aside .profile h4{
+    position:relative;
+    color:rgb(207, 206, 206);
+    font-size:16px;
+    font-family:'Roboto',sans-serif;
+}
+aside .nav-menu{
+    position:relative;
+}
+aside .nav-menu li{
+    position:relative;
+    width:85%;
+    list-style:none;
+    margin-bottom: 18px;
+}
+aside .nav-menu li a{
+    width:100%;
+    padding:0px 0px 5px 3px;
+    text-decoration: none;
+    font-size:15px;
+    color:rgb(207, 206, 206);
+    transition: all 0.4s;
+    outline:none;
+    z-index:99;
+}
+aside .nav-menu li a:after{
+    content:"";
+    position:absolute;
+    left:0;
+    display:block;
+    width:0%;
+    height:2px;
+    background: rgb(19, 79, 190);
+    transition: all 0.4s;
+    border-radius: 5px;
+}
+aside .nav-menu li a:hover:after,
+aside .nav-menu li a.active:after,
+aside .nav-menu li a:hover,
+aside .nav-menu li a.active {
+    width:100%;
+    padding:0px 0px 0px 13px;
+}
+aside h5{
+    position:relative;
+    font-size:13px;
+    font-family: 'Roboto',sans-serif;
+    color:rgb(207, 206, 206);
+    font-weight: 300;
+}
+aside .social-media-accounts{
+    position:relative;
+    gap:10px;
+}
+aside .social-media-accounts .icons{
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    background:#02264e;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-top:3px;
+}
+aside .social-media-accounts .icons a i{
+    color:rgb(207, 206, 206);;
+    font-size:14px;
+}
+aside .social-media-accounts .icons:hover,
+aside .social-media-accounts .icons a i:hover{
+    background-color:#15549c;
+}
+section#home{
+    width:100%;
+    height:100vh;
+    background-image:url('../images/web_development1.jfif');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+section#home .overlay-box{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100vh;
+    background-color:rgba(0,0,0,0.6);
+}
+section#home .introduction{
+    position:relative;
+    color:#FFF;
+    z-index:10;
+}
+section#home .introduction h2{
+   font-size:25px;
+   font-family: 'Roboto',sans-serif;
+   color:rgb(207, 206, 206);
+}
+section#home .introduction h3{
+    font-size:40px;
+    font-weight:500;
+    font-family: 'Roboto',sans-serif;
+    letter-spacing: 2px;
+    color:#3891f7;
+ }
+ section#home .introduction p{
+     font-size:45px;
+     color:rgb(207, 206, 206);
+ }
+ section#home .introduction p span{
+    margin-left:5px;
+    border-radius: 1px;
+    color:#d48b03;
+    font-weight: 600;
+ }
+
+ section#projects{
+    width:100%;
+    height:auto;
+}
+section#projects .items{
+   gap:20px;
+}
+section#projects #title-project{
+   font-family: 'Roboto',sans-serif;
+   font-weight: normal;
+   text-transform: uppercase;
+   position: relative;
+   color:#424242;
+}
+section#projects #title-project:after{
+    content:"";
+    position: absolute;
+    left:0;
+    width:60px;
+    height:2px;
+    display:block;
+    background-color:#15549c;
+}
+section#projects .items .item{
+    gap:25px;
+ }
+ section#projects .items .item .card{
+    width:100%;
+    background:#FFF;
+    box-shadow: 0px 3px 4px rgba(22, 22, 22, 0.5);
+ }
+ section#projects .items .item .card h6{
+    margin-top:15px;
+    font-family: 'Roboto',sans-serif;
+    color:#256ec2;
+ }
+ section#projects .items .item .card p{
+    margin-top:2px;
+    font-family: 'Roboto', sans-serif;
+    color:rgb(27, 26, 26);
+    font-weight: 300;
+ }
+ section#projects .items .item .card span{
+    font-size:14px;
+    color:#464747;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+ }
+ section#projects .items .item .card img{
+    width:100%;
+    height:100%;
+ }
+ section#projects .items .item .card span small{
+    margin-left:5px;
+    color:#f33636;
+ }
+ section#projects .items .item .card a{
+     text-decoration: none;
+     outline:none;
+     margin-top:8px;
+     font-family: 'Roboto', sans-serif;
+     position:relative;
+     font-size:14px;
+     transition: all 0.3s;
+     background:linear-gradient(45deg, #3c8de9, #032a57);
+     padding:6px;
+     text-align: center;
+     color:rgb(238, 238, 238);
+     font-weight: 300;
+ }
+ section#projects .items .item .card a:hover{
+    background:linear-gradient(45deg, #256ec2, #011f41);
+}
+section#skills{
+    width:100%;
+    height:auto;
+    background:#e7eef7;
+}
+section#skills #title-skills{
+    font-family: 'Roboto',sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    position: relative;
+    color:#424242;
+}
+section#skills #title-skills:after{
+    content:"";
+    position: absolute;
+    left:0;
+    width:40px;
+    height:3px;
+    display:block;
+    background-color:#15549c;
+}
+section#skills li{
+    color:#15549c;
+    font-family: 'Roboto',sans-serif;
+    font-size:18px;
+    font-weight: 400;
+}
+section#skills .frontend .skill,
+section#skills .backend .skill,
+section#skills .frontend .others{
+    width:100%;
+}
+
+section#skills .frontend .skill span,
+section#skills .backend .skill span,
+section#skills .others .skill span{
+    font-family: 'Roboto',sans-serif;
+    font-weight: 400;
+    color:#5d5f5f;
+    padding-left:10px;
+}
+
+section#skills .frontend .skill .progress,
+section#skills .backend .skill .progress,
+section#skills .others .skill .progress{
+    position:relative;
+    width:100%;
+    height:18px;
+    background:#FFF;
+    border-radius: 20px;
+    border:1px solid #cccdce;
+    margin:8px 0px 10px;
+}
+section#testimonials{
+    width:100%;
+    height:auto;
+    color:#424242;
+    font-family: 'Roboto',sans-serif;
+}
+section#testimonials h4{
+    position:relative;
+}
+section#testimonials h4:after{
+    content:"";
+    position: absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:80px;
+    height:3px;
+    display:block;
+    background-color:#15549c;
+}
+section#about{
+    width:100%;
+    height:auto;
+    font-family: 'Roboto',sans-serif;
+    color:#424242;
+    background:linear-gradient(45deg, #eaf3fd, #8ebff8);
+}
+section#about h4{
+    position:relative;
+}
+section#about h4:after{
+    content:"";
+    position: absolute;
+    width:60px;
+    height:3px;
+    display:block;
+    background-color:#15549c;
+}
+section#about span{
+    font-size:19px;
+}
+section#about a#download{
+    display:flex;
+    margin-top:10px;
+    justify-content:center;
+    outline:none;
+    text-decoration: none;
+    padding:6px 12px;
+    background:linear-gradient(45deg, #3c8de9, #032a57);
+    color:#FFF;
+    width:150px;
+    font-weight: 300;
+    font-size:15px;
+    transition: all 0.4s;
+}
+section#about a#download:hover{
+    background:linear-gradient(45deg, #286fc0, #021f41);
+}
+section#about a#download i{
+    margin-left:10px;
+    padding:0;
+    margin-top: auto;
+} 
+section#contact{
+    position:relative;
+    width:100%;
+    height:auto;
+    font-family: 'Roboto',sans-serif;
+    color:#424242;
+}
+section#contact h4{
+    position:relative;
+}
+section#contact h4:after{
+    content:"";
+    position: absolute;
+    width:60px;
+    height:3px;
+    display:block;
+    background-color:#15549c;
+}
+section#contact h3{
+    font-size:22px;
+    color:#1e3c5e;
+}
+section#contact .form-group{
+    padding:25px 25px 50px;
+    background:linear-gradient(125deg, rgb(240, 240, 240), #519bf0);
+    box-shadow: 0px 5px 7px rgba(0,0,0,0.5);
+    z-index:30;
+    position:relative;
+    border-radius:5px;
+}
+section#contact #wave{
+    position: absolute;
+    bottom:0;
+    width:100%;
+    left:0;
+}
+section#contact #btnSubmit{
+    position: relative;
+    z-index:20;
+}
+@media screen and (max-width:1199px){
+    aside{
+        left:-100%;
+    }
+    .sections{
+        left:0%;
+    }
+    aside.slide{
+        left:0;
+    }
+    #burger{
+        right:5%;
+        display:block;
+    }
+    section#projects #title-project{
+        margin-left:25px;
+     }
+     section#projects .items .item{
+        padding-left:25px;
+        padding-right:0;
+     }
+     section#skills{
+         padding:0px 30px;
+     }
+     section#skills .frontend,
+     section#skills .backend,
+     section#skills .others{
+         padding:0px 20px;
+     }
+     section#testimonials{
+        padding-left:30px;
+     }
+     section#about{
+        padding-left:30px;
+     }
+     section#contact{
+        padding-left:30px;
+     }
+}
+@media screen and (max-width:600px){
+    aside.slide{
+        left:0;
+        width:100%;
+    }
+    section#home .introduction h2{
+        font-size:20px;
+     }
+     section#home .introduction h3{
+         font-size:30px;
+      }
+      section#home .introduction p{
+          font-size:35px;
+      }
+      section#projects .items .item{
+        flex-direction: column;
+     }
+     #burger{
+        right:4%;
+    }
+}
+@media screen and (max-width:480px){
+    aside.slide{
+        left:0;
+    }
+    #burger{
+        right:6%;
+    }
+    section#home .introduction p{
+        font-size:30px;
+    }
+}
